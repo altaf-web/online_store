@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('role')->comment("1=>vendor,2=>seller");
+            $table->uuid();
+            $table->unsignedTinyInteger('role_id')->comment("1=>vendor,2=>seller");
             $table->string("first_name", 30);
             $table->string("last_name", 30);
             $table->string("phone_number",11);

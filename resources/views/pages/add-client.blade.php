@@ -12,7 +12,6 @@
 
                         <form class="row g-3" id="form"  method="post" action="{{ route('clients.store') }}">
                             @csrf
-
                             <div class="col-md-6 form-group">
                                 <label for="first_name" class="form-label">First name</label>
                                 <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{@old('first_name')}}" placeholder="John" autocomplete="off" maxlength="30">
@@ -39,7 +38,7 @@
 
                             <div class="form-group col-md-6">
                                 <label for="role" class="form-label">Role</label>
-                                <select name="role" class="form-control @error('role') is-invalid @enderror">
+                                <select name="role_id" class="form-control @error('role') is-invalid @enderror">
                                     <option value="">Select Type (Client)</option>
                                     @foreach([1=>'vendor','seller'] as $key => $client)
                                         <option value="{{ $key }}">{{ $client }}</option>

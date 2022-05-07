@@ -11,7 +11,7 @@ class AddClientRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -21,13 +21,13 @@ class AddClientRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            "first_name"    =>  "required|max:20",
-            "last_name"     =>  "required|max:20",
-            "phone_number"  =>  "required|numeric|min:10|max:10",
-            ""
+            "first_name"    =>  "required|min:2|max:30",
+            "last_name"     =>  "required|min:2|max:30",
+            "phone_number"  =>  "required|min:11",
+            "role_id"       =>  ["required"]
         ];
     }
 }
